@@ -3,13 +3,13 @@
 
 import { validate, randomNumber, winOrNot, pushToHistory } from "./lotteryLogic.js";
 import { lotteryHistory } from "./history.js";
-import { renderHistory, renderResult, errorValidate } from "./dom.js";
+import { renderHistory, renderResult, errorValidate, cleanScreen } from "./dom.js";
 
 
 const numberInput = document.getElementById("number-input")
 const playButton = document.getElementById("playButton");
 const historyButton = document.getElementById("historyButton");
-const result = document.getElementById("result");
+const resultContainer = document.getElementById("result");
 
 
 
@@ -21,8 +21,15 @@ if (!validate(numberInput.value)) return errorValidate();
 
 let randomNum = randomNumber();
 
+let result = winOrNot(randomNum, Number(numberInput.value));
 
-}catch{
+pushToHistory(result, lotteryHistory);
+cleanScreen(resultContainer);
+renderResult(resultContainer, result);
+
+
+}catch(error){
+    console.error(error);
 
 }
 

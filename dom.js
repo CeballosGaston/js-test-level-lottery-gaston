@@ -25,3 +25,7 @@ export function renderHistory(array, container) {
 export function errorValidate() {
   return `You must enter a number from 1 to 10`;
 }
+
+export function cleanScreen(container) {
+  container.textContent = "";
+}
