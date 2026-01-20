@@ -9,11 +9,11 @@ export function renderResult(container, object) {
 }
 
 export function renderHistory(array, container) {
-  const paragraph = document.getElementById("p");
+  const paragraph = document.createElement("p");
 
   let texto = array
-    .map((object) => {
-      return `Ingresado: ${object.data.userNumber} | Aleatorio: ${object.data.randomNumber} | Resultado: ${object.message}`;
+    .map((object, index) => {
+      return `Jugada número: ${index + 1} | Ingresado: ${object.data.userNumber} | Aleatorio: ${object.data.randomNumber} | Resultado: ${object.message}`;
     })
     .join("<br>");
 
