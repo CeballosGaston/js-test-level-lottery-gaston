@@ -1,5 +1,5 @@
 "use strict";
-// import { lotteryHistory } from "./history.js";
+
 
 export function validate(input) {
   if (input === null || input === undefined) return false;

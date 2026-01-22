@@ -12,6 +12,7 @@ const resultContainer = document.getElementById("result");
 playButton.addEventListener("click", () => {
   try {
     if (!validate(numberInput.value)) return resultContainer.innerHTML =  errorValidate();
+   
 
     let randomNum = randomNumber();
 
